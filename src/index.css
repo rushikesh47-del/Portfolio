@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Permanent+Marker&display=swap');
+
+
+@import "tailwindcss";
+
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+
+}
+
+.green-pink-gradient {
+  background: linear-gradient(135deg, #00ffcc 0%, #ff00ff 100%);
+}
+
+/* Add to your CSS (e.g., index.css or global.css) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+.about-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-text {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+}
+
+.overview-title {
+  font-size: 48px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.overview-description {
+  color: #cccccc;
+  margin: 20px 0 50px;
+  line-height: 1.6;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  height: 220px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #00ffff, #8000ff);
+  padding: 2px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.card-inner {
+  background-color: #151030;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-inner img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.card-inner h3 {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  /* Start from very top */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* ✅ Only top half — adjust this % if needed */
+  object-fit: cover;
+  opacity: 0.5;
+  /* Adjust transparency if you'd like */
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  margin-top: -21.5%;
+}
+
+
+
+
+.hero h1 {
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.spline-container {
+  position: absolute;
+  top: 50px;
+  right: -100px;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Navbar styles */
+@layer utilities {
+  .border-hsla {
+    @apply border border-white/20;
+  }
+
+  .nav-hover-btn {
+    @apply relative ms-10 text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
+  }
+
+.floating-nav {
+  @apply bg-transparent border border-white/10;
+}
+
+}
